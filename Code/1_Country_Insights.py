@@ -6,14 +6,14 @@ import openai
 from llama_index import VectorStoreIndex, ServiceContext, Document
 from llama_index.llms import OpenAI
 from llama_index import SimpleDirectoryReader
-from utils import add_logo,add_contact_info,configure_streamlit_page,open_ai_key,sidebar_fix_width
+from utils import add_logo,add_contact_info,configure_streamlit_page,open_ai_key,sidebar_fix_width,add_contact_info2
 from function import select_country,country_wise_analysis
 
 ##Page Configuration
 configure_streamlit_page()
 add_logo()
 sidebar_fix_width()
-add_contact_info()
+add_contact_info2()
 ##Main Content
 st.markdown("#### <span style='color: #1e3d7d;'>Country Insights</span>", unsafe_allow_html=True)
 st.markdown("<p style='color: dark grey;'>Your single destination for a comprehensive country overview.</p>", unsafe_allow_html=True)

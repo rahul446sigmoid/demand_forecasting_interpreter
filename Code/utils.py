@@ -43,7 +43,28 @@ def add_contact_info():
         with st.expander("#### 📧 Contact"):
             st.write("rkushwaha@sigmoidanalytics.com")
     
-    
+def add_contact_info2():
+    with st.sidebar:
+        st.sidebar.write(" ")
+        st.sidebar.write(" ")
+        st.sidebar.write(" ")
+        st.sidebar.write(" ")
+        st.sidebar.write(" ")
+        st.sidebar.write(" ")
+        st.sidebar.write(" ")
+        st.sidebar.write(" ")
+        st.sidebar.write(" ")
+        st.sidebar.write(" ")
+        st.sidebar.write(" ")
+        st.sidebar.write(" ")
+        st.sidebar.write(" ")
+        st.sidebar.write(" ")
+        st.sidebar.write(" ")
+        st.sidebar.write(" ")
+        st.sidebar.write(" ")
+        st.sidebar.write(" ")
+        with st.expander("#### 📧 Contact"):
+            st.write("rkushwaha@sigmoidanalytics.com")
 
 def open_ai_key():
     openai_api_key = st.sidebar.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
