@@ -67,9 +67,6 @@ def add_contact_info2():
         st.sidebar.write(" ")
         st.sidebar.write(" ")
         st.sidebar.write(" ")
-        st.sidebar.write(" ")
-        st.sidebar.write(" ")
-        st.sidebar.write(" ")
         with st.expander("#### 📧 Contact"):
             st.write("rkushwaha@sigmoidanalytics.com")
 
