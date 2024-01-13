@@ -16,7 +16,7 @@ sidebar_fix_width()
 
 
 ##Reading the data
-df_dash = pd.read_csv("Data/Diageo_gen.csv")
+df_dash = pd.read_csv("./Data/Diageo_gen.csv")
 st.markdown("#### <span style='color: #1e3d7d;'>Select Your Parameter</span>", unsafe_allow_html=True)
 
 

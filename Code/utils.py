@@ -9,7 +9,7 @@ import streamlit as st
 def configure_streamlit_page():
     st.set_page_config(
         page_title="Sigmoid GenAI",
-        page_icon="Data/cropped-Sigmoid_logo_3x.png",
+        page_icon="./Data/cropped-Sigmoid_logo_3x.png",
         layout="wide",
     )
 
@@ -83,7 +83,7 @@ def open_ai_key():
 ## Logo in the side bar
 def add_logo():
     # Path to your image
-    image_path = "Data/cropped-Sigmoid_logo_3x.png"
+    image_path = "./Data/cropped-Sigmoid_logo_3x.png"
     image_width = 160
     image_height = 80
     background_position_x =30
