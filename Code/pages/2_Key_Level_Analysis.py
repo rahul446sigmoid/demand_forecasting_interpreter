@@ -157,7 +157,7 @@ def main():
                     6. Analyze the year on year growth based on the data_yoy_dict include the change percentage.
                     7. Analyze the in general seasonality based on the seasonal_patter_dict
                     8. The dictinoary: {trend_dict} for trend analysis,{data_yoy_dict} for year-on-year growth analysis and  {seasonal_patter_dict} for seasonlity analysis.
-                    9. Donot include the name of dict only generate inshits from using the dict data
+                    9. Donot include the name of dict in the output like a data analyst 
                     10.The conclusion should not be more then 30 words"""
 
             chat = ChatOpenAI(temperature=0.0, model=model, openai_api_key=openai_api_key)
@@ -191,9 +191,10 @@ def main():
                     styled_text = (
                             f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #0996ce; color: white;border-radius: 5px;width: 200px; height: 350px;"">'
                             f'<div style="font-size: 16px; color: white;"><b>{heading_of_interest}:</b></div>' 
-                            f"{result_dict[heading_of_interest]}"
+                            f"{result_dict[heading_of_interest][:-14]}"
                             f'</div>'
                         )
+        
 
                     # Display the styled text using Streamlit's markdown
                     st.markdown(styled_text, unsafe_allow_html=True)
@@ -204,7 +205,7 @@ def main():
                     styled_text = (
                             f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #0996ce; color: white;border-radius: 5px;width: 200px; height: 350px;"">'
                             f'<div style="font-size: 16px; color:white;"><b>{heading_of_interest}:</b></div>' 
-                            f"{result_dict[heading_of_interest]}"
+                            f"{result_dict[heading_of_interest][:-14]}"
                             f'</div>'
                         )
 
@@ -217,7 +218,7 @@ def main():
                     styled_text = (
                             f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #0996ce; color: white;border-radius: 5px;width: 200px; height: 350px;"">'
                             f'<div style="font-size: 16px; color: white;"><b>{heading_of_interest}:</b></div>' 
-                            f"{result_dict[heading_of_interest]}"
+                            f"{result_dict[heading_of_interest][:-14]}"
                             f'</div>'
                         )
 
@@ -230,7 +231,7 @@ def main():
                     styled_text = (
                             f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #0996ce; color: white;border-radius: 5px;width: 200px; height: 350px;"">'
                             f'<div style="font-size: 16px; color: white;"><b>{heading_of_interest}:</b></div>' 
-                            f"{result_dict[heading_of_interest]}"
+                            f"{result_dict[heading_of_interest][:-14]}"
                             f'</div>'
                         )
 
@@ -241,7 +242,7 @@ def main():
 
                         # Use HTML tags to style the heading and content
                     styled_text = (
-                            f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #06c480; color: white;border-radius: 5px;width: 200px; height: 350px;"">'
+                            f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #06c480; color: white;border-radius: 5px;width: 250px; height: 350px;"">'
                             f'<div style="font-size: 16px; color: white;"><b>{heading_of_interest}:</b></div>' 
                             f"{result_dict[heading_of_interest]}"
                             f'</div>'
