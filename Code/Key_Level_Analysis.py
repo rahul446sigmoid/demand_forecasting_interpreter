@@ -197,7 +197,7 @@ def main():
 
                         # Use HTML tags to style the heading and content
                         styled_text = (
-                                f'<div style="border: 1px solid #D91E18; padding: 3px; background-color: white; color: black;border-radius: 5px;width: 200px; height: 320px;"">'
+                                f'<div style="border: 1px solid #D91E18; padding: 3px; background-color: #f1f1f1; color: black;border-radius: 5px;width: 200px; height: 320px;"">'
                                 f'<div style="font-size: 16px; color: #D91E18;"> <b> 🕰️  {heading_of_interest}:</b></div>' 
                                 f"{result_dict[heading_of_interest][:-14]}"
                                 f'</div>'
@@ -211,7 +211,7 @@ def main():
 
                             # Use HTML tags to style the heading and content
                         styled_text = (
-                                f'<div style="border: 1px solid #D91E18; padding: 3px; background-color: white; color: black;border-radius: 5px;width: 200px; height: 320px;"">'
+                                f'<div style="border: 1px solid #D91E18; padding: 3px; background-color: #f1f1f1; color: black;border-radius: 5px;width: 200px; height: 320px;"">'
                                 f'<div style="font-size: 16px; color:#D91E18;"><b> 📈 {heading_of_interest}:</b></div>' 
                                 f"{result_dict[heading_of_interest][:-14]}"
                                 f'</div>'
@@ -224,7 +224,7 @@ def main():
 
                             # Use HTML tags to style the heading and content
                         styled_text = (
-                                f'<div style="border: 1px solid #D91E18; padding: 3px; background-color: white; color: black;border-radius: 5px;width: 200px; height: 320px;"">'
+                                f'<div style="border: 1px solid #D91E18; padding: 3px; background-color: #f1f1f1; color: black;border-radius: 5px;width: 200px; height: 320px;"">'
                                 f'<div style="font-size: 16px; color: #D91E18;"><b> 📊 {heading_of_interest}:</b></div>' 
                                 f"{result_dict[heading_of_interest][:-14]}"
                                 f'</div>'
@@ -237,7 +237,7 @@ def main():
 
                             # Use HTML tags to style the heading and content
                         styled_text = (
-                                f'<div style="border: 1px solid #D91E18; padding: 3px; background-color: white; color: black;border-radius: 5px;width: 200px; height: 320px;"">'
+                                f'<div style="border: 1px solid #D91E18; padding: 3px; background-color: #f1f1f1; color: black;border-radius: 5px;width: 200px; height: 320px;"">'
                                 f'<div style="font-size: 16px; color: #D91E18;"><b> 🗓 {heading_of_interest}:</b></div>' 
                                 f"{result_dict[heading_of_interest][:-14]}"
                                 f'</div>'
@@ -250,7 +250,7 @@ def main():
 
                             # Use HTML tags to style the heading and content
                         styled_text = (
-                                f'<div style="border: 1px solid #D91E18; padding: 3px; background-color: white; color: black;border-radius: 5px;width: 250px; height: 320px;"">'
+                                f'<div style="border: 1px solid #D91E18; padding: 3px; background-color: #f1f1f1; color: black;border-radius: 5px;width: 250px; height: 320px;"">'
                                 f'<div style="font-size: 16px; color:#D91E18 ;"><b> 📄 {heading_of_interest}:</b></div>' 
                                 f"{result_dict[heading_of_interest]}"
                                 f'</div>'
