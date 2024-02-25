@@ -189,74 +189,75 @@ def main():
                     result_dict[heading] = text[start_idx:end_idx].strip().replace(heading, "").strip()[1:]                
                     # Apply styling to the output box with a chat icon
 
-                    
-                c1,c2,c3,c4,c5=st.columns(5)
-                with c1:
-                    heading_of_interest = headings_of_interest[0]
+                with st.container(height=400):   
+                    c1,c2,c3,c4,c5=st.columns(5)
 
-                    # Use HTML tags to style the heading and content
-                    styled_text = (
-                            f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #0996ce; color: white;border-radius: 5px;width: 200px; height: 320px;"">'
-                            f'<div style="font-size: 16px; color: white;"><b>{heading_of_interest}:</b></div>' 
-                            f"{result_dict[heading_of_interest][:-14]}"
-                            f'</div>'
-                        )
-        
-
-                    # Display the styled text using Streamlit's markdown
-                    st.markdown(styled_text, unsafe_allow_html=True)
-                with c2:
-                    heading_of_interest = headings_of_interest[1]
+                    with c1:
+                        heading_of_interest = headings_of_interest[0]
 
                         # Use HTML tags to style the heading and content
-                    styled_text = (
-                            f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #0996ce; color: white;border-radius: 5px;width: 200px; height: 320px;"">'
-                            f'<div style="font-size: 16px; color:white;"><b>{heading_of_interest}:</b></div>' 
-                            f"{result_dict[heading_of_interest][:-14]}"
-                            f'</div>'
-                        )
+                        styled_text = (
+                                f'<div style="border: 1px solid #D91E18; padding: 3px; background-color: white; color: black;border-radius: 5px;width: 200px; height: 320px;"">'
+                                f'<div style="font-size: 16px; color: #D91E18;"> <b> 🕰️  {heading_of_interest}:</b></div>' 
+                                f"{result_dict[heading_of_interest][:-14]}"
+                                f'</div>'
+                            )
+            
 
                         # Display the styled text using Streamlit's markdown
-                    st.markdown(styled_text, unsafe_allow_html=True)                  
-                with c3:
-                    heading_of_interest = headings_of_interest[2]
+                        st.markdown(styled_text, unsafe_allow_html=True)
+                    with c2:
+                        heading_of_interest = headings_of_interest[1]
 
-                        # Use HTML tags to style the heading and content
-                    styled_text = (
-                            f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #0996ce; color: white;border-radius: 5px;width: 200px; height: 320px;"">'
-                            f'<div style="font-size: 16px; color: white;"><b>{heading_of_interest}:</b></div>' 
-                            f"{result_dict[heading_of_interest][:-14]}"
-                            f'</div>'
-                        )
+                            # Use HTML tags to style the heading and content
+                        styled_text = (
+                                f'<div style="border: 1px solid #D91E18; padding: 3px; background-color: white; color: black;border-radius: 5px;width: 200px; height: 320px;"">'
+                                f'<div style="font-size: 16px; color:#D91E18;"><b> 📈 {heading_of_interest}:</b></div>' 
+                                f"{result_dict[heading_of_interest][:-14]}"
+                                f'</div>'
+                            )
+
+                            # Display the styled text using Streamlit's markdown
+                        st.markdown(styled_text, unsafe_allow_html=True)                  
+                    with c3:
+                        heading_of_interest = headings_of_interest[2]
+
+                            # Use HTML tags to style the heading and content
+                        styled_text = (
+                                f'<div style="border: 1px solid #D91E18; padding: 3px; background-color: white; color: black;border-radius: 5px;width: 200px; height: 320px;"">'
+                                f'<div style="font-size: 16px; color: #D91E18;"><b> 📊 {heading_of_interest}:</b></div>' 
+                                f"{result_dict[heading_of_interest][:-14]}"
+                                f'</div>'
+                            )
+
+                            # Display the styled text using Streamlit's markdown
+                        st.markdown(styled_text, unsafe_allow_html=True)
+                    with c4:
+                        heading_of_interest = headings_of_interest[3]
+
+                            # Use HTML tags to style the heading and content
+                        styled_text = (
+                                f'<div style="border: 1px solid #D91E18; padding: 3px; background-color: white; color: black;border-radius: 5px;width: 200px; height: 320px;"">'
+                                f'<div style="font-size: 16px; color: #D91E18;"><b> 🗓 {heading_of_interest}:</b></div>' 
+                                f"{result_dict[heading_of_interest][:-14]}"
+                                f'</div>'
+                            )
+
+                            # Display the styled text using Streamlit's markdown
+                        st.markdown(styled_text, unsafe_allow_html=True)
+                    with c5:
+                        heading_of_interest = headings_of_interest[4]
+
+                            # Use HTML tags to style the heading and content
+                        styled_text = (
+                                f'<div style="border: 1px solid #D91E18; padding: 3px; background-color: white; color: black;border-radius: 5px;width: 250px; height: 320px;"">'
+                                f'<div style="font-size: 16px; color:#D91E18 ;"><b> 📄 {heading_of_interest}:</b></div>' 
+                                f"{result_dict[heading_of_interest]}"
+                                f'</div>'
+                            )
 
                         # Display the styled text using Streamlit's markdown
-                    st.markdown(styled_text, unsafe_allow_html=True)
-                with c4:
-                    heading_of_interest = headings_of_interest[3]
-
-                        # Use HTML tags to style the heading and content
-                    styled_text = (
-                            f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #0996ce; color: white;border-radius: 5px;width: 200px; height: 320px;"">'
-                            f'<div style="font-size: 16px; color: white;"><b>{heading_of_interest}:</b></div>' 
-                            f"{result_dict[heading_of_interest][:-14]}"
-                            f'</div>'
-                        )
-
-                        # Display the styled text using Streamlit's markdown
-                    st.markdown(styled_text, unsafe_allow_html=True)
-                with c5:
-                    heading_of_interest = headings_of_interest[4]
-
-                        # Use HTML tags to style the heading and content
-                    styled_text = (
-                            f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #06c480; color: white;border-radius: 5px;width: 250px; height: 320px;"">'
-                            f'<div style="font-size: 16px; color: white;"><b>{heading_of_interest}:</b></div>' 
-                            f"{result_dict[heading_of_interest]}"
-                            f'</div>'
-                        )
-
-                    # Display the styled text using Streamlit's markdown
-                    st.markdown(styled_text, unsafe_allow_html=True)
+                        st.markdown(styled_text, unsafe_allow_html=True)
         else:
             st.warning("Please Enter Your API key!")
 
