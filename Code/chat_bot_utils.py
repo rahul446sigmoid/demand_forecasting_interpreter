@@ -4,9 +4,7 @@ import streamlit as st
 import string
 import random
 import pandas as pd
-openai_api_key= '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'
 
-data_chat_bot = pd.read_csv("/Users/rahulkushwaha/gENAI/demand_forecasting_interpreter/Data/Diageo_gen.csv")
 
 def chat_bot(open_ai_key,df,user_question):
     llm = OpenAI(api_token=open_ai_key)
