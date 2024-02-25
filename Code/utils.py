@@ -71,10 +71,8 @@ def add_contact_info2():
             st.write("rkushwaha@sigmoidanalytics.com")
 
 def open_ai_key():
-    openai_api_key = st.sidebar.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
-    submit_button = st.sidebar.button("Submit")
-    if submit_button:
-        openai_api_key = openai_api_key
+    with st.container(height=90):
+        openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
     return openai_api_key
 
 

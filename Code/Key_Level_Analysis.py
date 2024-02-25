@@ -1,19 +1,26 @@
 import streamlit as st
 from utils import add_logo,add_contact_info,configure_streamlit_page,open_ai_key,sidebar_fix_width
 import pandas as pd
-import streamlit as st 
+import string
+import random
+from chat_bot_utils import chat_bot
 from function import visualize_timeseries ,yoy_growth,calculate_trend_slope_dataframe,\
 model,find_max_min_volume_months
+from css_style import render_navbar
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 
+
+
+
 ##Page Configuration
 configure_streamlit_page()
-add_logo()
-openai_api_key=open_ai_key()
-add_contact_info()
-sidebar_fix_width()
+# add_logo()
+# openai_api_key=open_ai_key()
+# add_contact_info()
+# sidebar_fix_width()
 
+render_navbar()
 
 ##Reading the data
 df_dash = pd.read_csv("./Data/Diageo_gen.csv")
@@ -83,9 +90,10 @@ def main():
 
         return selected_levels, selected_channel, selected_sector, selected_price_tier, selected_geo
     # Select data levels and additional options
-    selected_levels = select_level(df_dash)
+    with st.container(height=180):
+        selected_levels = select_level(df_dash)
     # Time Series Visualization Section
-    st.markdown("---")
+    # st.markdown("---")
     data = visualize_timeseries(df_dash, selected_levels[0], selected_levels[4],
                                         selected_levels[1], selected_levels[2], selected_levels[3])
             
@@ -121,8 +129,8 @@ def main():
             color:#ff0000;
             }
         </style>""", unsafe_allow_html=True)
-
-    if st.button("Get Analysis"):
+    openai_api_key=open_ai_key()
+    if st.button("Get Analysis",type="primary"):
         if openai_api_key:
             analysis_string = """Generate the analysis based on instruction\
                                         that is delimited by triple backticks.\
@@ -183,13 +191,12 @@ def main():
 
                     
                 c1,c2,c3,c4,c5=st.columns(5)
-            
                 with c1:
                     heading_of_interest = headings_of_interest[0]
 
                     # Use HTML tags to style the heading and content
                     styled_text = (
-                            f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #0996ce; color: white;border-radius: 5px;width: 200px; height: 350px;"">'
+                            f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #0996ce; color: white;border-radius: 5px;width: 200px; height: 320px;"">'
                             f'<div style="font-size: 16px; color: white;"><b>{heading_of_interest}:</b></div>' 
                             f"{result_dict[heading_of_interest][:-14]}"
                             f'</div>'
@@ -203,7 +210,7 @@ def main():
 
                         # Use HTML tags to style the heading and content
                     styled_text = (
-                            f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #0996ce; color: white;border-radius: 5px;width: 200px; height: 350px;"">'
+                            f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #0996ce; color: white;border-radius: 5px;width: 200px; height: 320px;"">'
                             f'<div style="font-size: 16px; color:white;"><b>{heading_of_interest}:</b></div>' 
                             f"{result_dict[heading_of_interest][:-14]}"
                             f'</div>'
@@ -216,7 +223,7 @@ def main():
 
                         # Use HTML tags to style the heading and content
                     styled_text = (
-                            f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #0996ce; color: white;border-radius: 5px;width: 200px; height: 350px;"">'
+                            f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #0996ce; color: white;border-radius: 5px;width: 200px; height: 320px;"">'
                             f'<div style="font-size: 16px; color: white;"><b>{heading_of_interest}:</b></div>' 
                             f"{result_dict[heading_of_interest][:-14]}"
                             f'</div>'
@@ -229,7 +236,7 @@ def main():
 
                         # Use HTML tags to style the heading and content
                     styled_text = (
-                            f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #0996ce; color: white;border-radius: 5px;width: 200px; height: 350px;"">'
+                            f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #0996ce; color: white;border-radius: 5px;width: 200px; height: 320px;"">'
                             f'<div style="font-size: 16px; color: white;"><b>{heading_of_interest}:</b></div>' 
                             f"{result_dict[heading_of_interest][:-14]}"
                             f'</div>'
@@ -242,7 +249,7 @@ def main():
 
                         # Use HTML tags to style the heading and content
                     styled_text = (
-                            f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #06c480; color: white;border-radius: 5px;width: 250px; height: 350px;"">'
+                            f'<div style="border: 1px solid #1e3d7d; padding: 3px; background-color: #06c480; color: white;border-radius: 5px;width: 250px; height: 320px;"">'
                             f'<div style="font-size: 16px; color: white;"><b>{heading_of_interest}:</b></div>' 
                             f"{result_dict[heading_of_interest]}"
                             f'</div>'
@@ -253,12 +260,48 @@ def main():
         else:
             st.warning("Please Enter Your API key!")
 
-                            
+    data_chat_bot = data_trend.copy()                  
+    data_chat_bot["key"] = data_chat_bot["channel"]+"_"+ data_chat_bot["sector"]+"_"+data_chat_bot["price_tier"]
+
+    # st.write(data_chat_bot)
+    with st.expander("🤖 Have More Question??"):
+        with st.container(height=300):
+            def randon_string() -> str:
+                return "".join(random.choices(string.ascii_uppercase + string.digits, k=10))
+
+            def chat_actions():
+                st.session_state["chat_history"].append(
+                    {"role": "user", "content": st.session_state["chat_input"]},
+                )
+
+                st.session_state["chat_history"].append(
+                    {
+                        "role": "assistant",
+                        #"content": randon_string(),
+                        "content": chat_bot(openai_api_key,data_chat_bot,st.session_state["chat_input"]),
+                    },  # This can be replaced with your chat response logic
+                )
+
+
+            if "chat_history" not in st.session_state:
+                st.session_state["chat_history"] = []
+
+
+            
+        
+
+            for i in st.session_state["chat_history"]:
+                with st.chat_message(name=i["role"]):
+                    st.write(i["content"])
+
+        st.chat_input("Ask Me?", on_submit=chat_actions, key="chat_input")
+        def reset_conversation():
+            st.session_state.conversation = None
+            st.session_state.chat_history = []
+        st.button('Reset Chat', on_click=reset_conversation)
 
     st.markdown("---")
-
 if __name__ == "__main__":
     main()
-# else:
-#     st.warning("Please enter the API key!")
+
 

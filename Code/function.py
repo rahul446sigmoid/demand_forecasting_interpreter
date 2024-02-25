@@ -6,7 +6,6 @@ import plotly.express as px
 import streamlit as st
 import openai
 import numpy as np
-from PyPDF2 import PdfReader
 from streamlit.logger import get_logger
 import smtplib
 import ssl
@@ -52,7 +51,7 @@ def visualize_timeseries(df, level, country, channel, sector, price_tier):
     plot_bgcolor='white',
     paper_bgcolor='white',
     font_color='black' ,
-    height=350, 
+    height=300, 
     width=800,
     margin=dict(l=50, r=10, t=50, b=10) ,
     xaxis_title="Month", 
@@ -78,7 +77,7 @@ def visualize_timeseries(df, level, country, channel, sector, price_tier):
         plot_bgcolor='white',
         paper_bgcolor='white',
         font_color='black',
-        height=350,
+        height=300,
         xaxis_title="Year", 
         yaxis_title="Percentage Change",
         margin=dict(l=50, r=50, t=50, b=10),
