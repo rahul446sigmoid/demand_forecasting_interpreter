@@ -172,7 +172,7 @@ def main():
             user_analysis = analysis_template.format_messages(instruction_analyis=instruction_analysis,format_analysis=format_analysis)
 
             with st.spinner('Generating...'):
-                st.markdown("###### <span style='color: #1e3d7d;'>Inshights and Findings</span>", unsafe_allow_html=True)
+                st.markdown("###### <span style='color: #1e3d7d;'>Insights and Findings</span>", unsafe_allow_html=True)
 
                 response = chat(user_analysis)
                 text=response.content
@@ -264,6 +264,9 @@ def main():
     data_chat_bot["key"] = data_chat_bot["channel"]+"_"+ data_chat_bot["sector"]+"_"+data_chat_bot["price_tier"]
 
     # st.write(data_chat_bot)
+    st.write("            ")
+    st.write("            ")
+    st.write("            ")
     with st.expander("🤖 Have More Question??"):
         with st.container(height=300):
             def randon_string() -> str:
