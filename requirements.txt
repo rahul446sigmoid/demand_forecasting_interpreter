@@ -11,3 +11,4 @@ openpyxl
 tabulate
 pandasai
 statsmodels
+polars
