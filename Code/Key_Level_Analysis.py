@@ -23,7 +23,7 @@ configure_streamlit_page()
 render_navbar()
 
 ##Reading the data
-df_dash = pd.read_csv("./Data/Diageo_gen.csv")
+df_dash = pd.read_csv("./Data/Data_gen.csv")
 st.markdown("#### <span style='color: #1e3d7d;'>Select Your Parameter</span>", unsafe_allow_html=True)
 
 
