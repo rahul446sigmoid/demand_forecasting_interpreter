@@ -44,4 +44,4 @@ def render_navbar():
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     """, unsafe_allow_html=True)
 
-render_navbar()
+
