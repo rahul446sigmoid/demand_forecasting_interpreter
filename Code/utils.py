@@ -41,7 +41,7 @@ def add_contact_info():
         st.sidebar.write(" ")
         st.sidebar.write(" ")
         with st.expander("#### 📧 Contact"):
-            st.write("rkushwaha@sigmoidanalytics.com")
+            st.write("rrahul1011@gmail.com")
     
 def add_contact_info2():
     with st.sidebar:
@@ -68,7 +68,7 @@ def add_contact_info2():
         st.sidebar.write(" ")
         st.sidebar.write(" ")
         with st.expander("#### 📧 Contact"):
-            st.write("rkushwaha@sigmoidanalytics.com")
+            st.write("rrahul1011@gmail.com")
 
 def open_ai_key():
    
